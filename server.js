@@ -1,7 +1,7 @@
 const express=require('express')
 
 // import the routes in routes/index.js
-const indexRouter =require('./index')
+const indexRouter =require('./routes/index')
 
 //create the web application
 const app= express()
