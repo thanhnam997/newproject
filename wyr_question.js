@@ -1,3 +1,4 @@
+// Array of objects containing Would You Rather questions and their answers// Array of objects containing Would You Rather questions and their answers
 const questions = [
     {
         'question': 'Live in a house shaped like a triangle or a house shaped like a circle?',
@@ -25,11 +26,14 @@ const questions = [
         'answer2': 'Famous scientist'
     },
 ]
-
+// Function to get a random Would You Rather question from the 'questions' array
 function randomWyrQuestion() {
-    const randomIndex= Math.floor(Math.random() * questions.length)
-    const randomQuestion = question[randomIndex]
+    // Generate a random index within the range of the 'questions' array length
+    const randomIndex = Math.floor(Math.random() * questions.length)
+    // Get the question object at the randomly generated index
+    const randomQuestion = questions[randomIndex]
+    // Return the randomly chosen question object
     return randomQuestion
 }
-
+// Export the randomWyrQuestion function so it can be used in other files
 module.exports = randomWyrQuestion

@@ -1,13 +1,17 @@
-const express = require('express');
-const router = express.Router();
 
+// Import the Express module
+const express = require('express')
+// Create a router instance
+const router = express.Router()
+// Require the 'randomWyrQuestion' function from the local module 'wyr_question.js'
+const randomWyrQuestion = require('./wyr_question.js')
+// Define a route handler for GET requests to '/wyr'
 router.get('/wyr', function(req, res, next) {
-    const wyr = {
-        'question': 'live in a house shaped like a triangle or house shaped like a circle?',
-        'answer1': 'Triangle house',
-        'answer2': 'Circle house'
-    };
-    res.json(wyr);
-});
+    // Call the 'randomWyrQuestion' function to get a random WYR question
+    const wyrQuestion = randomWyrQuestion()
+    // Send the randomly chosen WYR question as a JSON response
+    res.json(wyrQuestion)
+})
+// Export the router so it can be used in other files
+module.exports = router
 
-module.exports = router;
